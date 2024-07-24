@@ -21,14 +21,14 @@ const SingleFoodScreen = ({route, navigation}) => {
     // const foodQuantity={...food, quantity}
     const existingItem = cart.find(
       cartItem => cartItem.foodName === item.foodName,
-      // cartItem.id === item.id,
+      
     );
     if (existingItem) {
       setCart(
         // [...cart,foodQuantity];
         cart.map(cartItem =>
           cartItem.foodName === item.foodName
-            ? {...cartItem, quantity: cartItem.quantity + quantity}
+            ? {...cartItem, quantity: cartItem.quantity += quantity}
             : cartItem,
         ),
       );

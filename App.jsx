@@ -15,7 +15,9 @@ import ProfileScreen from './src/screens/ProfileScreen';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import State from './src/context/state';
-
+import CheckoutScreen from './src/screens/CheckoutScreen';
+import PaymentSuccessScreen from './src/screens/PaymentSuccessScreen';
+import LogoutScreen from './src/screens/LogoutScreen';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -33,6 +35,10 @@ function StackNavigation() {
       <Stack.Screen name="Allfood" component={AllFoodScreen} />
       <Stack.Screen name="Category" component={CategoryScreen} />
       <Stack.Screen name="UserProfile" component={ProfileScreen} />
+      <Stack.Screen name="Checkout" component={CheckoutScreen} />
+      <Stack.Screen name="PaymentSuccess" component={PaymentSuccessScreen} />
+      <Stack.Screen name="Logout" component={LogoutScreen} />
+
     </Stack.Navigator>
   );
 }
@@ -45,7 +51,9 @@ function TabNavigation() {
         component={StackNavigation}
         options={{
           tabBarLabel: 'Home',
-          tabBarIcon: ({ color, size }) => <Icon name="home" color={color} size={size} />,
+          tabBarIcon: ({color, size}) => (
+            <Icon name="home" color={color} size={size} />
+          ),
           headerShown: false,
         }}
       />
@@ -54,7 +62,9 @@ function TabNavigation() {
         component={AllFoodScreen}
         options={{
           tabBarLabel: 'Menu',
-          tabBarIcon: ({ color, size }) => <Icon name="bars" color={color} size={size} />,
+          tabBarIcon: ({color, size}) => (
+            <Icon name="bars" color={color} size={size} />
+          ),
         }}
       />
       <Tab.Screen
@@ -62,7 +72,9 @@ function TabNavigation() {
         component={CartScreen}
         options={{
           tabBarLabel: 'Cart',
-          tabBarIcon: ({ color, size }) => <Icon name="shopping-cart" color={color} size={size} />,
+          tabBarIcon: ({color, size}) => (
+            <Icon name="shopping-cart" color={color} size={size} />
+          ),
         }}
       />
       <Tab.Screen
@@ -70,7 +82,9 @@ function TabNavigation() {
         component={ProfileScreen}
         options={{
           tabBarLabel: 'Profile',
-          tabBarIcon: ({ color, size }) => <Icon name="user-o" color={color} size={size} />,
+          tabBarIcon: ({color, size}) => (
+            <Icon name="user-o" color={color} size={size} />
+          ),
         }}
       />
     </Tab.Navigator>
